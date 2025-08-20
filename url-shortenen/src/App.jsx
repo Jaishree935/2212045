@@ -4,7 +4,7 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [shortenedUrls, setShortenedUrls] = useState([]);
 
-  // mock function to generate random short code
+
   const generateShortCode = () => {
     return Math.random().toString(36).substring(2, 8);
   };
@@ -16,7 +16,7 @@ function App() {
     }
 
     const createdAt = new Date();
-    const expiryAt = new Date(createdAt.getTime() + 7 * 24 * 60 * 60 * 1000); // +7 days expiry
+    const expiryAt = new Date(createdAt.getTime() + 7 * 24 * 60 * 60 * 1000);
 
     const newEntry = {
       originalUrl: inputValue,
@@ -31,7 +31,6 @@ function App() {
     setInputValue("");
   };
 
-  // mock adding a click (for testing)
   const addClick = (index) => {
     const newUrls = [...shortenedUrls];
     const clickData = {
@@ -71,7 +70,7 @@ function App() {
           URL Shortener
         </h1>
 
-        {/* Input Box */}
+        {}
         <input
           type="text"
           placeholder="Enter URL here..."
@@ -106,8 +105,7 @@ function App() {
         >
           Shorten URL
         </button>
-
-        {/* Display Shortened URLs */}
+ 
         {shortenedUrls.map((item, index) => (
           <div
             key={index}
@@ -152,8 +150,7 @@ function App() {
             >
               Simulate Click
             </button>
-
-            {/* Click Details */}
+ 
             {item.clicks.length > 0 && (
               <div style={{ marginTop: "15px" }}>
                 <h4>Click Details:</h4>
